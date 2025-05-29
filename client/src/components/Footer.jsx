@@ -14,7 +14,7 @@ function Footer() {
                     <img src={assets.instagramIcon} alt='instagram-icon' className='w-6' />
                     <img src={assets.facebookIcon} alt='facebook-icon' className='w-6' />
                     <img src={assets.twitterIcon} alt='twitter-icon' className='w-6' />
-                    <img src={assets.linkedinIcon} alt='linkedin-icon' className='w-6' />
+                    <img src={assets.linkendinIcon} alt='linkedin-icon' className='w-6' />
                     </div>
                 </div>
 
