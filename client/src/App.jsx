@@ -6,6 +6,7 @@ import Footer from './components/Footer.jsx'
 import AllRooms from './pages/AllRooms.jsx'
 import RoomDetails from './pages/RoomDetails.jsx'
 import MyBooking from './pages/MyBooking.jsx'
+import HotelReg from './components/HotelReg.jsx'
 
 const App = () => {
   const isOwnerPath = useLocation().pathname.includes("owner");
@@ -13,6 +14,7 @@ const App = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {!isOwnerPath && <Navbar />}
+      {false && <HotelReg />} 
 
       <main className="flex-1">
         <Routes>
