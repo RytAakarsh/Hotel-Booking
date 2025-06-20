@@ -3,6 +3,7 @@ import "dotenv/config";
 import cors from "cors"
 import connectDB from "./configs/db.js";
 import { clerkMiddleware } from '@clerk/express'
+import clerkWebhoooks from "./controllers/clerkWebhooks.js";
 
 
 connectDB()
@@ -16,6 +17,9 @@ app.use(cors())
 app.use(express.json())
 app.use(clerkMiddleware())
 
+
+// API to listen to clerk WebHooks
+app.use("/api/clerk", clerkWebhoooks); 
 
 
 app.get('/', (req,res) => res.send("API is Working"))
