@@ -69,9 +69,11 @@ web_modules/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
 .env
-.env.test
+*.env
+# Also consider adding:
+.env.local
+.env.development
 .env.production
 
 # parcel-bundler cache (https://parceljs.org/)
