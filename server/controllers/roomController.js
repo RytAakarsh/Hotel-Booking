@@ -25,7 +25,7 @@ export const createRoom = async ( req , res ) => {
         hotel: hotel._id,
         roomType,
         pricePerNight: +pricePerNight,
-        amenities: JJSON.parse(amenities),
+        amenities: JSON.parse(amenities),
         images,
        })
        res.json({success: true , message: "Room Created"})
