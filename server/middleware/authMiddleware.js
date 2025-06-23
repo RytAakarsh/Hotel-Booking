@@ -3,7 +3,7 @@ import  User from "../models/User.js"
 
 
 export const protect = async ( requestAnimationFrame, res , next ) => {
-    const {userId} = requestAnimationFrame.auth;
+    const {userId} = req.auth;
     if(!userId) {
         res.json({success: false, message: "not authenticated"})
     }else {
