@@ -1,17 +1,17 @@
-import { getAuth } from "@clerk/clerk-sdk-node";
+import clerk from "@clerk/clerk-sdk-node";
 import User from "../models/User.js";
 
 export const protect = async (req, res, next) => {
   try {
-    const auth = getAuth(req);
+    const auth = clerk.getAuth(req);
 
-    if (!auth.userId) {
+    if (!auth || !auth.userId) {
       return res.status(401).json({ success: false, message: "Not authenticated" });
     }
 
     const user = await User.findById(auth.userId);
     if (!user) {
-      return res.status(401).json({ success: false, message: "User not found in DB" });
+      return res.status(401).json({ success: false, message: "User not found" });
     }
 
     req.user = user;
